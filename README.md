@@ -1,7 +1,10 @@
 # Parallel near-duplicate document detection using general-purpose GPU
 
 Within this project, we have developed three distinct implementations for detecting near-duplicate documents.
-These implementations include a sequential CPU approach, a parallel CPU approach, and a parallel GPU approach.
+These implementations include:
+- a sequential CPU approach,
+- a parallel CPU approach, and
+- a parallel GPU approach.
 
 For this project, the programming language Python was used because it is powerful, flexible, and easy to use.
 When it comes to utilizing the GPU for the parallelization of tasks, Numba was used as it supports CUDA GPU
