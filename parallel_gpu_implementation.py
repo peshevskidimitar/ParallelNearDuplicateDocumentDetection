@@ -38,7 +38,7 @@ def benchmark(iters, phase):
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description='Benchmarking of parallel CPU implementation for detecting near-duplicate documents.'
+        description='Benchmarking of parallel GPU implementation for detecting near-duplicate documents.'
     )
 
     parser.add_argument('-i', '--iterations', type=int, default=101, help='The number of times the code is executed.')
