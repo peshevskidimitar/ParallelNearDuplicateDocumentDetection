@@ -18,19 +18,19 @@ One can execute any of the implementations from the command line by providing tw
 number of iterations and the other for the number of documents within the dataset.
 
 ### Running the sequential CPU implementation
-`python sequential_cpu_implementation --iterations 101 --documents 1000`
+`python sequential_cpu_implementation.py --iterations 101 --documents 1000`
 or
 
-`python sequential_cpu_implementation -i 101 -d 1000`
+`python sequential_cpu_implementation.py -i 101 -d 1000`
 
 ### Running the parallel CPU implementation
-`python parallel_cpu_implementation --iterations 101 --documents 1000`
+`python parallel_cpu_implementation.py --iterations 101 --documents 1000`
 or
 
-`python parallel_cpu_implementation -i 101 -d 1000`
+`python parallel_cpu_implementation.py -i 101 -d 1000`
 
 ### Running the parallel GPU implementation
-`python parallel_gpu_implementation --iterations 101 --documents 1000`
+`python parallel_gpu_implementation.py --iterations 101 --documents 1000`
 or
 
-`python parallel_gpu_implementation -i 101 -d 1000`
+`python parallel_gpu_implementation.py -i 101 -d 1000`

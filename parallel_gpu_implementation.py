@@ -216,6 +216,29 @@ def extract_duplicate_documents_wrapper(documents, count_duplicates, dev_documen
     return duplicates
 
 
+def check(filename, duplicates):
+    true_duplicates = []
+    with open(filename, 'r') as file:
+        for line in file:
+            doc_id1, doc_id2 = line.strip().split(' ')
+            true_duplicates.append((doc_id1, doc_id2))
+
+    true_duplicates = sorted(true_duplicates)
+    duplicates = sorted(duplicates)
+
+    if len(true_duplicates) != len(duplicates):
+        return False
+
+    for index in range(len(true_duplicates)):
+        if true_duplicates[index][0] == duplicates[index][0] and \
+                true_duplicates[index][1] == duplicates[index][1]:
+            continue
+
+        return False
+
+    return True
+
+
 def main():
     documents = parse_data(f'data/articles_{num_docs}.train')
     shingled_documents = shingle_documents(documents)
@@ -225,8 +248,8 @@ def main():
     threshold = 0.90
     dev_document_similarities, count_duplicates = estimate_document_similarity_wrapper(dev_signature_matrix,
                                                                                        threshold)
-    duplicates = extract_duplicate_documents_wrapper(documents, count_duplicates, dev_document_similarities, threshold)
-    print(duplicates)
+    est_duplicates = extract_duplicate_documents_wrapper(documents, count_duplicates, dev_document_similarities, threshold)
+    print(check(f'data/articles_{num_docs}.truth', est_duplicates))
 
 
 main()
